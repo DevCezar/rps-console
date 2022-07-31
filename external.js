@@ -28,23 +28,28 @@ function question() {
     }
 }
 
-// compare user 'round' value vs computerChoice 
+//scenarios
 function playRound(userString, computerString) {
-
-}
-
-
-function playRound(userString, computerString) {
-  if (userString === "rock" && computerString === "paper") {
-    return 'computer wins';
-  } else {
-    return 'tie'
-  }
+    if (userString === "rock" && computerString === "paper") {
+        return (`Computer wins :( ${computerString} beats ${userString}`);
+    } else if (userString === "paper" && computerString === "scissors") {
+        return (`Computer wins :( ${computerString} beats ${userString}`);
+    } else if (userString === "scissors" && computerString === "rock") {
+        return (`Computer wins :( ${computerString} beats ${userString}`);
+    } else if (userString === "rock" && computerString === "scissors") {
+        return (`You win! ${userString} beats ${computerString}`);
+    } else if (userString === "paper" && computerString === "rock") {
+        return (`You win! ${userString} beats ${computerString}`);
+    } else if (userString === "scissors" && computerString === "paper") {
+        return (`You win! ${userString} beats ${computerString}`);
+    } else if (userString === computerString ) {
+        return (`Tie, ${computerString} and ${userString} are equal`);
+    } else {
+        return 'try again'
+    }
 }
 
 computerChoice();
 question()
 console.log(playRound(userString, computerString));
 playRound();
-
-// note for me add the other if else return scenarios
