@@ -1,13 +1,15 @@
+let computerString; 
+let userString;
+
 // RPS Function
 function computerChoice() {
     let num = Math.floor(Math.random() * 3 ) + 1
-    console.log(num);
     if (num == 1) {
-        console.log('scissors');
+        computerString = 'scissors';
     } else if (num == 2) {
-        console.log('rock');
+        computerString = 'rock';
     } else {
-        console.log('paper');
+        computerString = 'paper';
     }
 }
 
@@ -16,20 +18,33 @@ function question() {
     let answer = prompt("Rock, Paper, Scissors... SHOOT!");
     let caseSens = answer.toLowerCase();
     if (caseSens == 'scissors') {
-        console.log('scissors2');
+        userString = 'scissors';
     } else if (caseSens == 'rock') {
-        console.log('rock2');
+        userString = 'rock';
     } else if (caseSens == 'paper'){
-        console.log('paper2');
+        userString = 'paper';
     } else {
-        console.log('invalid');
+        console.log('invalid choice, choose Rock, Paper, Scissors');
     }
 }
 
 // compare user 'round' value vs computerChoice 
-function result() {
-    computerChoice();
-    question()
+function playRound(userString, computerString) {
+
 }
 
-question();
+
+function playRound(userString, computerString) {
+  if (userString === "rock" && computerString === "paper") {
+    return 'computer wins';
+  } else {
+    return 'tie'
+  }
+}
+
+computerChoice();
+question()
+console.log(playRound(userString, computerString));
+playRound();
+
+// note for me add the other if else return scenarios
